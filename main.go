@@ -11,8 +11,6 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
-	"os/user"
-	"path"
 	"strings"
 	"text/tabwriter"
 	"time"
@@ -70,12 +68,14 @@ func tmExist() bool {
 }
 
 func getTmDir() string{
-	usr, err := user.Current()
-	if err != nil {
-		panic(fmt.Errorf("get user error: %v", err))
-	}
+	//usr, err := user.Current()
+	//if err != nil {
+	//	panic(fmt.Errorf("get user error: %v", err))
+	//}
+	//
+	//tmDir := path.Join(usr.HomeDir, ".tendermint")
 
-	tmDir := path.Join(usr.HomeDir, ".tendermint")
+	tmDir := "/trias/.tendermint"
 	return tmDir
 }
 
